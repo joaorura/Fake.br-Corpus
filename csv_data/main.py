@@ -2,9 +2,9 @@ from os import listdir
 from os.path import isfile, join, abspath
 from pandas import DataFrame
 
-FAKE_PATH = abspath(r'C:\Users\jmess\Downloads\Fake.br-Corpus-master\size_normalized_texts\fake')
-TRUE_PATH = abspath(r'C:\Users\jmess\Downloads\Fake.br-Corpus-master\size_normalized_texts\true')
-PATH_SAVE = abspath(r'C:\Users\jmess\Downloads\Fake.br-Corpus-master\data.csv')
+FAKE_PATH = abspath(r'C:\Users\jmess\Documents\Workspace\UFAL\Fake.br-Corpus\size_normalized_texts\fake')
+TRUE_PATH = abspath(r'C:\Users\jmess\Documents\Workspace\UFAL\Fake.br-Corpus\size_normalized_texts\true')
+PATH_SAVE = abspath(r'C:\Users\jmess\Documents\Workspace\UFAL\Fake.br-Corpus\csv_data\data.csv')
 
 def get_files(path):
 	onlyfiles = [join(path, f) for f in listdir(path) if isfile(join(path, f))]
@@ -41,7 +41,7 @@ def main():
 	}
 
 	df = DataFrame(data)
-	df.to_csv(PATH_SAVE)
+	df.to_csv(PATH_SAVE, index=False)
 
 
 if __name__ == '__main__':
